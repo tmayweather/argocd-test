@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metrics-server
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: /kubernetes/apps/kube-system/metrics-server
+spec:
+  project: default
+  sources:
+  - repoURL: 'https://kubernetes-sigs.github.io/metrics-server/'
+    chart: metrics-server
+    targetRevision: 3.11.0
+    helm:
+      valueFiles:
+        - $values/kubernetes/apps/kube-system/metrics-server/app/values.yaml
+  - repoURL: 'https://github.com/tmayweather/argocd-test.git'
+    targetRevision: main
+    path: kubernetes/apps/kube-system/metrics-server
+    ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
