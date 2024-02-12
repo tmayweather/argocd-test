@@ -15,6 +15,9 @@ spec:
     helm:
       valueFiles:
         - $values/apps/kube-system/metrics-server/app/values.yaml
+      parameters:
+        - name: installCRDs
+          value: "true"
   - repoURL: 'https://github.com/tmayweather/argocd-test.git'
     targetRevision: main
     path: apps/kube-system/metrics-server/app
