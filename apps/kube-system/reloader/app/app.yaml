@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: reloader
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: /argocd/apps/kube-system/reloader
+spec:
+  project: default
+  sources:
+    - repoURL: 'https://stakater.github.io/stakater-charts'
+      chart: reloader
+      targetRevision: 1.0.62
+      helm:
+        valueFiles:
+          - $values/argocd/apps/kube-system/reloader/app/values.yaml
+    - repoURL: 'git@github.com:tmayweather/argocd-test.git'
+      targetRevision: master
+      path: argocd/apps/kube-system/reloader
+      ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
