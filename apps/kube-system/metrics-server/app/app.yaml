@@ -15,7 +15,7 @@ spec:
     helm:
       valueFiles:
         - $values/apps/kube-system/metrics-server/app/values.yaml
-  - repoURL: 'git@github.com:tmayweather/argocd-test.git'
+  - repoURL: 'https://github.com/tmayweather/argocd-test.git'
     targetRevision: main
     path: apps/kube-system/metrics-server/app
     ref: values

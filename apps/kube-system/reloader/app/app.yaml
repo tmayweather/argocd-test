@@ -16,8 +16,8 @@ spec:
         valueFiles:
           - $values/argocd/apps/kube-system/reloader/app/values.yaml
     - repoURL: 'git@github.com:tmayweather/argocd-test.git'
-      targetRevision: master
-      path: argocd/apps/kube-system/reloader
+      targetRevision: main
+      path: argocd/apps/kube-system/reloader/app
       ref: values
   destination:
     server: "https://kubernetes.default.svc"
