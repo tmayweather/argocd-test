@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: github-deploy-key
+    namespace: argocd
+    labels:
+        argocd.argoproj.io/secret-type: repository
+stringData:
+    type: ENC[AES256_GCM,data:oaHl,iv:502EUQyXhL2qdg5qOEwXsXsJ+ZYCXd5YgGzj6LPH9QQ=,tag:KYzzp7Awg8Q/Fo72Oehisg==,type:str]
+    url: ENC[AES256_GCM,data:1ncbscpwHBp++8HLN2ahfyJp8ZIZ14h5kDtmm3CmeRuKVdOha0gLTR+e,iv:WzdBVeO8D2p7h0af7f82ze2CFqjWbqFYjBjKF3xc4kw=,tag:hCo15InhKa1o7inGGCON8A==,type:str]
+    sshPrivateKey: ENC[AES256_GCM,data:cuWDXfyerhsER2O+1SHAxhQ4jj52xyxSOid1V7VqrQIdfu4IyXU2LVay6Tz5UUsYfb1EvgaKkzHIV0Q+/kZAHgbAIPDeMojrJhcShqvSg/UD1hbvpokuMvF0IjxmwEstOtZ93tx2nhdAlq0hUAnMgfEHxSAQNgZ3+xMOAxHlj4lcwJaIpC7ZBUhqnhSpR8jdS1EnVLe4R/zS0PbWkQC5uovkvWOwIbm+KsiHhU8OyD13MSfKk+2TBNo+0PGoUA616RDuYJ52mVY9Iv/35XXcH+n1UuGGXWUEhESv8KErn73HhSsFYDoyrAvUotrm3z+Gp3hgGphDF1NUvcfN4jdLpiAD7Ns0+u1MPmNT3g2jR/42lT3jxZrnWsOtzMHpSkbXoleyffRKXiF/ls6vH6A/S22OAUz/n2fpBs5046x9ms8mzwxZW+ZbxiKQUQCh0PR8nNUn7ltYUoiK0sMmmfFiPFqFN5zMMqFkGApuBMhy6siYOAMTaeAEJky4TN/+yR0hgHZT,iv:6wYXJtf6BQ0G9uFHiODWGK9mBwEmsTZkhk9iVYqwrbg=,tag:3EauqYZK/NahmoIfe07Ujg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fema8gdj73k0hgk7s7h23uavm3mh3smst5eqq0sw8cfcakmxpa6q9pzftc
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzdXVodDBoMG4xZEIzSU1k
+            WkZTTndqQnV3Rkxaand5c1lwcXhobDdtTjAwCnZveVdac1JYM1NKMWFKTzQvRmU2
+            ZmpsbE1jV0ZValFhV0hrT21nSnQzdjAKLS0tIGYzYTAyOHBxbzhZUHJUVXovY0JG
+            V25PV2Mzd3JjZGdLbkZRUWZ0S0Z6bG8Kou7HkrGl0Ft+YH4uqnh5u9/E3U11qmBb
+            zcFZAUn/Tl4M63zC+HvS1M+/I0gBck64SKgFl2MY2sDnH5FGqswiqw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-01-13T23:08:48Z"
+    mac: ENC[AES256_GCM,data:HiyLuqBXgJert16uIM5datzEOlDwQB0zrJMcant1EEEIFy/7Oj+AIvt347/s1qbXAsBoX6zOUuMajzbFjDzWB1WZLRI1kKlDRv8IyCy/awPCreKp4O7nrFLZHH/9izBwDCoERur4cMIFMR6gzWsq9LtabQKMmbJryV/vxh+/BDc=,iv:33ysMBxJecgAFetJM1DqNHLaYBqh0HWlouTwsXNO4ZQ=,tag:bs5cfIx+Mw0XfxV6RoKgww==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1
