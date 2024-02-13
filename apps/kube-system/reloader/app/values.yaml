@@ -1,3 +1,0 @@
-reloader:
-  reloadStrategy: annotations
-  reloadOnCreate: false
