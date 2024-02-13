@@ -18,7 +18,7 @@ spec:
       parameters:
         - name: installCRDs
           value: "true"
-  - repoURL: 'https://github.com/tmayweather/argocd-test.git'
+  - repoURL: 'git@github.com:tmayweather/argocd-test.git'
     targetRevision: main
     path: apps/kube-system/metrics-server/app
     ref: values
