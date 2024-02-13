@@ -5,7 +5,7 @@ metadata:
   name: reloader
   namespace: argocd
   annotations:
-    argocd.argoproj.io/manifest-generate-paths: /argocd/apps/kube-system/reloader
+    argocd.argoproj.io/manifest-generate-paths: /apps/kube-system/reloader
 spec:
   project: default
   sources:
@@ -14,10 +14,10 @@ spec:
       targetRevision: 1.0.62
       helm:
         valueFiles:
-          - $values/argocd/apps/kube-system/reloader/app/values.yaml
+          - $values/apps/kube-system/reloader/app/values.yaml
     - repoURL: 'git@github.com:tmayweather/argocd-test.git'
       targetRevision: main
-      path: argocd/apps/kube-system/reloader/app
+      path: apps/kube-system/reloader/app
       ref: values
   destination:
     server: "https://kubernetes.default.svc"
