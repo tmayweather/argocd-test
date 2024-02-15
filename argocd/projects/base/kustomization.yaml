@@ -5,3 +5,4 @@ resources:
 - frontend-deployment.yaml
 - backend-service.yaml
 - frontend-service.yaml
+- app-of-apps.yaml

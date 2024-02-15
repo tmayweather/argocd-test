@@ -5,6 +5,7 @@ resources:
 namePrefix: dev
 namespace: dev
 patchesStrategicMerge:
+- app.yaml
 - backend-deployment.yaml
 - frontend-deployment.yaml
 commonLabels:

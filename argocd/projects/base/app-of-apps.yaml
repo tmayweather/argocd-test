@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    path: argocd/projects # it watches over the apps directory
+    path: argocd/projects/overlays
     repoURL: git@github.com:tmayweather/argocd-test.git
     targetRevision: main
     directory:
-      recurse: false
+      recurse: true
   destination:
     server: 'https://kubernetes.default.svc'
   syncPolicy:
