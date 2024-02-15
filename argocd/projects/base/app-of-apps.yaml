@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    path: argocd/projects/overlays
+    path: argocd/projects
     repoURL: git@github.com:tmayweather/argocd-test.git
     targetRevision: main
     directory:
