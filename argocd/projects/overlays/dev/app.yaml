@@ -8,7 +8,7 @@ spec:
   source:
     path: argocd/projects/overlays/dev
     repoURL: git@github.com:tmayweather/argocd-test.git
-    targetRevision: HEAD
+    targetRevision: main
     directory:
       recurse: false
   destination:
