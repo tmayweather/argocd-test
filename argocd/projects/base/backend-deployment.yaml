@@ -12,6 +12,7 @@ spec:
   template:
     metadata:
       labels:
+        service: weather-api
         app: weather-backend
         tier: backend
     spec:
