@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: weather-ui
+      app: weather-frontend
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        service: weather-ui
+        app: weather-frontend
+        tier: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: tmayweather/frontend-weather:latest
+          ports:
+            - containerPort: 80

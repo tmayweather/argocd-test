@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: weather-backend-api
+  labels:
+    service: weather-api
+    app: weather-backend
+    tier: backend
+spec:
+  ports:
+  - port: 8000
+    targetPort: 80
+    protocol: TCP
+  selector:
+    service: weather-api

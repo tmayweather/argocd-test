@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-backend
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      env: staging
+  template:
+    metadata:
+      labels:
+        env: staging
