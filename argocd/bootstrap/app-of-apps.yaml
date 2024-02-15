@@ -3,16 +3,14 @@ kind: Application
 metadata:
   name: app-of-apps
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    path: argocd/apps # it watches over the apps directory
+    path: argocd/projects # it watches over the apps directory
     repoURL: git@github.com:tmayweather/argocd-test.git
     targetRevision: main
     directory:
-      recurse: true
+      recurse: false
   destination:
     server: 'https://kubernetes.default.svc'
   syncPolicy:
