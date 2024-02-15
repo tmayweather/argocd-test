@@ -8,13 +8,14 @@ spec:
   source:
     path: argocd/projects/overlays/dev
     repoURL: git@github.com:tmayweather/argocd-test.git
-    targetRevision: main
+    targetRevision: HEAD
     directory:
-      recurse: true
+      recurse: false
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: dev
   syncPolicy:
+    automated: {}
     syncOptions:
     - CreateNamespace=true
     automated:
