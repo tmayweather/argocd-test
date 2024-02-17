@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: clutch-ui
-          image: tmayweather/clutch-ui:latest
+          image: tmayweather/clutch-ui:v.01
           ports:
             - containerPort: 80
