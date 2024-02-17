@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weather-frontend
+  name: clutch-ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: weather-ui
-      app: weather-frontend
+      service: clutch-ui
+      app: clutch-ui
       tier: frontend
   template:
     metadata:
       labels:
-        service: weather-ui
-        app: weather-frontend
+        service: clutch-ui
+        app: clutch-ui
         tier: frontend
     spec:
       containers:
-        - name: frontend
-          image: tmayweather/frontend-weather:latest
+        - name: clutch-ui
+          image: tmayweather/clutch-ui:latest
           ports:
             - containerPort: 80
