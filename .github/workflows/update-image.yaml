@@ -22,7 +22,7 @@ jobs:
          name: docker-tags
          github-token: ${{ secrets.GH_PAT }} # token with actions:read permissions on target repo
          repository: tmayweather/clutch
-         run-id: 17946352100
+         run-id: 7946450701
 
       - name: Update backend and frontend image in argocd
         working-directory: argocd/projects/overlays/dev
