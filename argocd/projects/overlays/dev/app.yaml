@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: tmayweather/clutch-ui:latest, tmayweather/clutch-api:latest
-    argocd-image-updater.argoproj.io/clutch-ui.update-strategy: digest
-    argocd-image-updater.argoproj.io/clutch-api.update-strategy: digest
+    argocd-image-updater.argoproj.io/clutch-ui.update-strategy: tag
+    argocd-image-updater.argoproj.io/clutch-api.update-strategy: tag
     argocd-image-updater.argoproj.io/write-back-method: git
   finalizers:
     - resources-finalizer.argocd.argoproj.io
