@@ -17,12 +17,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download Docker image tags artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
-         name: my-other-artifact
+         name: docker-tags
          github-token: ${{ secrets.GH_PAT }} # token with actions:read permissions on target repo
          repository: tmayweather/clutch
-         run-id: 1234
+         run-id: 17946352100
 
       - name: Update backend and frontend image in argocd
         working-directory: argocd/projects/overlays/dev
