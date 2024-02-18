@@ -27,8 +27,8 @@ jobs:
       - name: Update backend and frontend image in argocd
         working-directory: argocd/projects/overlays/dev
         run: |
-          kustomize edit set image tmayweather/clutch-api:$(cat docker-tags/docker-tags.txt)
-          kustomize edit set image tmayweather/clutch-ui:$(cat docker-tags/docker-tags.txt)
+          kustomize edit set image tmayweather/clutch-api:$(cat docker-tags.txt)
+          kustomize edit set image tmayweather/clutch-ui:$(cat docker-tags.txt)
           git add .
           git commit -m "Update project to new version" 
           git push
