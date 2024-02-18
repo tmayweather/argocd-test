@@ -1,36 +1,36 @@
-name: update-image-argocd
+# name: update-image-argocd
 
-on:
-  workflow_dispatch:
-    inputs:
-      event-type:
-        description: 'build and push complete'
-        required: true
-        default: 'manual'
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       event-type:
+#         description: 'build and push complete'
+#         required: true
+#         default: 'manual'
 
-jobs:
-  update-image-argocd:
-    runs-on: ubuntu-latest
+# jobs:
+#   update-image-argocd:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
 
-      - name: Download Docker image tags artifact
-        uses: actions/download-artifact@v4
-        with:
-         name: docker-tags
-         github-token: ${{ secrets.GH_PAT }} # token with actions:read permissions on target repo
-         repository: tmayweather/clutch
-         run-id: 7946450701
+#       - name: Download Docker image tags artifact
+#         uses: actions/download-artifact@v4
+#         with:
+#          name: docker-tags
+#          github-token: ${{ secrets.GH_PAT }} # token with actions:read permissions on target repo
+#          repository: tmayweather/clutch
+#          run-id: 7946450701
 
-      - name: Display contents of docker-tags.txt (for verification)
-        run: cat docker-tags.txt
+#       - name: Display contents of docker-tags.txt (for verification)
+#         run: cat docker-tags.txt
 
-      - name: Update backend and frontend image in argocd
-        working-directory: argocd/projects/overlays/dev
-        run: |
-          kustomize edit set image tmayweather/clutch-api:$(cat docker-tags.txt)
-          git add .
-          git commit -m "Update project to new version" 
-          git push
+#       - name: Update backend and frontend image in argocd
+#         working-directory: argocd/projects/overlays/dev
+#         run: |
+#           kustomize edit set image tmayweather/clutch-api:$(cat docker-tags.txt)
+#           git add .
+#           git commit -m "Update project to new version" 
+#           git push
