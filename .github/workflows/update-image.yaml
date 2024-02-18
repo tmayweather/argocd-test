@@ -1,10 +1,12 @@
 name: update-image-argocd
 
 on:
-  workflow_run:
-    workflows: ["build-and-deploy"]
-    types:
-      - completed
+  workflow_dispatch:
+    inputs:
+      event-type:
+        description: 'build and push complete'
+        required: true
+        default: 'manual'
 
 jobs:
   update-image-argocd:
