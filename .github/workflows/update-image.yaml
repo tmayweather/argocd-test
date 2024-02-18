@@ -21,6 +21,7 @@ jobs:
         with:
           name: docker-tags
           path: .
+          repository: tmayweather/clutch
 
       - name: Update backend and frontend image in argocd
         working-directory: argocd/projects/overlays/dev
