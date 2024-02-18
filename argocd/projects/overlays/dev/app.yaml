@@ -4,8 +4,9 @@ metadata:
   name: clutch-app-dev
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: tmayweather/clutch-ui:~v0.1
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/image-list: myimage=tmayweather/clutch-ui
+    argocd-image-updater.argoproj.io/myimage.update-strategy: latest
+    argocd-image-updater.argoproj.io/myimage.allow-tags: regexp:^[0-9a-f]{7}$
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
