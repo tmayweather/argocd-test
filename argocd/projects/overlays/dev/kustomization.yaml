@@ -11,6 +11,6 @@ commonLabels:
   env: dev
 images:
 - name: tmayweather/clutch-api
-  newTag: v0.2
+  newTag: sha-6c391c6
 - name: tmayweather/clutch-ui
-  newTag: v0.2
+  newTag: sha-6c391c6
