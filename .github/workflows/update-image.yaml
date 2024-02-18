@@ -1,0 +1,30 @@
+name: update-image-argocd
+
+on:
+  workflow_run:
+    workflows: ["build-and-deploy"]
+    types:
+      - completed
+
+jobs:
+  update-image-argocd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Docker image tags artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: docker-tags
+          path: .
+
+      - name: Update backend and frontend image in argocd
+        working-directory: argocd/projects/overlays/dev
+        run: |
+          kustomize edit set image tmayweather/clutch-api:$(cat docker-tags/backend-tags)
+          kustomize edit set image tmayweather/clutch-ui:$(cat docker-tags/frontend-tags)
+          git add .
+          git commit -m "Update project to version $(cat docker-tags/backend-tags)"
+          git push
