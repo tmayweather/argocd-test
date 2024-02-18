@@ -24,6 +24,9 @@ jobs:
          repository: tmayweather/clutch
          run-id: 7946450701
 
+      - name: Display contents of docker-tags.txt (for verification)
+        run: cat docker-tags.txt
+
       - name: Update backend and frontend image in argocd
         working-directory: argocd/projects/overlays/dev
         run: |
