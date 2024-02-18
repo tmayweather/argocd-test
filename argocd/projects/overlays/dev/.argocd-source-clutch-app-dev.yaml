@@ -1,4 +1,4 @@
 kustomize:
   images:
-  - tmayweather/clutch-ui:v0.2
-  - tmayweather/clutch-api:v0.2
+  - tmayweather/clutch-ui:sha-54dc9a99ee00f2df078ec5dee3169395ec03ce2b
+  - tmayweather/clutch-api:sha-54dc9a99ee00f2df078ec5dee3169395ec03ce2b
