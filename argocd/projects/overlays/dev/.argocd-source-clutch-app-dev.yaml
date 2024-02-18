@@ -1,4 +1,0 @@
-kustomize:
-  images:
-  - tmayweather/clutch-ui:v0.2
-  - tmayweather/clutch-api:v0.2
