@@ -15,4 +15,4 @@ images:
   newTag: sha-e44d326
 - name: frontend
   newName: tmayweather/clutch-ui
-  newTag: sha-e44d326
+  newTag: sha-dfbcabf
