@@ -1,4 +1,0 @@
-kustomize:
-  images:
-  - tmayweather/clutch-ui@sha256:a4e2f4e51c10b5e8831e3be030a8c4417a5967642bfd8187e62088d677522c97
-  - tmayweather/clutch-api@sha256:03c3b46645c9a158330b3405cfab2d806e66b7413db079a51c178752ac6a6552

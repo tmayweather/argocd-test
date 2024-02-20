@@ -4,10 +4,10 @@ metadata:
   name: clutch-app-dev
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: clutch-ui=tmayweather/clutch-ui:latest, clutch-api=tmayweather/clutch-api:latest
-    argocd-image-updater.argoproj.io/clutch-ui.update-strategy: digest
-    argocd-image-updater.argoproj.io/clutch-api.update-strategy: digest
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/image-list: clutch-ui=tmayweather/clutch-ui, clutch-api=tmayweather/clutch-api
+    argocd-image-updater.argoproj.io/clutch-ui.update-strategy: latest
+    argocd-image-updater.argoproj.io/clutch-api.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: kustomize
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
