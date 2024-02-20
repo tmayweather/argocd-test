@@ -12,7 +12,7 @@ commonLabels:
 images:
 - name: backend
   newName: tmayweather/clutch-api
-  newTag: sha-e44d326
+  newTag: sha-dfbcabf
 - name: frontend
   newName: tmayweather/clutch-ui
   newTag: sha-dfbcabf
