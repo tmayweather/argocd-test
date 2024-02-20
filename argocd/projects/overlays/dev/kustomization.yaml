@@ -9,4 +9,6 @@ patchesStrategicMerge:
 - frontend-deployment.yaml
 commonLabels:
   env: dev
-
+images:
+- name: tmayweather/clutch-ui
+  newTag: sha-962ee3a
