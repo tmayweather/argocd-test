@@ -10,5 +10,8 @@ patchesStrategicMerge:
 commonLabels:
   env: dev
 images:
+- name: frontend
+  newName: tmayweather/clutch-ui
+  newTag: sha-e44d326
 - name: tmayweather/clutch-ui
   newTag: sha-962ee3a
