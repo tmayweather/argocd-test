@@ -17,6 +17,6 @@ images:
   newName: tmayweather/clutch-ui
   newTag: sha-dfbcabf
 - name: tmayweather/clutch-api
-  newTag: sha-2ec41ce
+  newTag: sha-a8cb5b7
 - name: tmayweather/clutch-ui
-  newTag: sha-2ec41ce
+  newTag: sha-a8cb5b7
