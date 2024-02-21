@@ -15,4 +15,4 @@ images:
 - name: tmayweather/clutch-api
   newTag: sha-f5f501d
 - name: tmayweather/clutch-ui
-  newTag: sha-f5f501d
+  newTag: sha-3691264
